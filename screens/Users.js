@@ -89,9 +89,18 @@ state = {
           showsVerticalScrollIndicator={false}
           renderItem={({item}) =>
           <View style={styles.flatview} >
+          <View style={{width:'10%'}}></View>
+           <Image
+            source={{ uri: item.photo }}
+            style={{ width: 100, height: 100, borderRadius : 50 }}
+          />
+          <View style={{width:'5%'}}></View>
+           <View style={{marginTop:5}}>
             <Text style={styles.name} onPress={() => this.editUser(item)}>{item.username}</Text>
             <Text style={styles.email}>{item.email}</Text>
             <Icon name="ios-trash" size={30} onPress={() => this.deleteItem(item)}/>
+            </View>
+            <View style={{width:'10%'}}></View>
           </View>
          
             
@@ -99,10 +108,7 @@ state = {
           }
           keyExtractor={item => item.email}
         />
-        <Image
-            source={{ uri: this.state.firebaseImage }}
-            style={{ width: 250, height: 250, alignSelf:'center' }}
-          />
+       
       </View>
     );
   }
@@ -112,7 +118,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF'
     
   },
@@ -123,9 +128,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   flatview: {
-    justifyContent: 'center',
+   
     paddingTop: 30,
     borderRadius: 2,
+    flexDirection: 'row'
   },
   name: {
     fontFamily: 'Verdana',
