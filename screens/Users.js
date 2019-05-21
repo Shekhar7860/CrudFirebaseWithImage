@@ -96,7 +96,7 @@ state = {
           />
           <View style={{width:'5%'}}></View>
            <View style={{marginTop:5}}>
-            <Text style={styles.name} onPress={() => this.editUser(item)}>{item.username}</Text>
+            <Text style={styles.name} onPress={() => this.editUser(item)}>{item.name}</Text>
             <Text style={styles.email}>{item.email}</Text>
             <Icon name="ios-trash" size={30} onPress={() => this.deleteItem(item)}/>
             </View>
